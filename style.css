@@ -35,9 +35,16 @@ body {
 }
 
 .welcome-header h1 {
-    font-size: 2.5rem;
-    color: #005A9C;
+    font-size: 2.8rem; /* เพิ่มขนาดเล็กน้อยให้เด่นขึ้น */
     margin: 0 0 0.5rem 0;
+    font-weight: 700;
+
+    /* ===== จุดแก้ไขที่ 1: เพิ่ม Gradient ให้ Main Menu ===== */
+    background: linear-gradient(45deg, #FFBF00, #FFD700, #800000, #FF0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .welcome-header p {
@@ -73,19 +80,15 @@ body {
 .menu-card h3 {
     margin: 0;
     font-size: 1.25rem;
-    /* เปลี่ยนจาก color เป็นใช้ gradient */
     font-weight: 700;
-    line-height: 1.3; /* เพิ่ม line-height เพื่อให้ข้อความสองบรรทัดไม่ติดกันเกินไป */
+    line-height: 1.3;
 
-
-    /* ===== สไตล์ Gradient สำหรับตัวหนังสือที่เพิ่มเข้ามาใหม่ ===== */
-    background: linear-gradient(to right, #8A2BE2, #FF1493, #FF4500); /* ไล่จากม่วงไปชมพูไปส้ม */
-    -webkit-background-clip: text; /* สำหรับ Chrome, Safari */
-    background-clip: text; /* สำหรับเบราว์เซอร์อื่นๆ */
-    -webkit-text-fill-color: transparent; /* ทำให้ตัวหนังสือโปร่งใส */
-    color: transparent; /* fallback สำหรับเบราว์เซอร์ที่ไม่รองรับ -webkit-text-fill-color */
-
-    /* เพิ่ม text-shadow เบาๆ เพื่อให้มีมิติเล็กน้อย (ถ้าไม่ต้องการ ลบออกได้) */
+    /* ===== จุดแก้ไขที่ 2: ปรับสี Gradient ในเมนูย่อย ===== */
+    background: linear-gradient(to right, #FFBF00, #FFD700, #800000, #FF0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    /* ======================================================= */
 }
