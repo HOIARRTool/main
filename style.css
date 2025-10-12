@@ -59,7 +59,7 @@ body {
     padding: 2rem;
     text-align: center;
     text-decoration: none;
-    color: #333; /* ตั้งสีพื้นฐานเป็นสีเข้มเพื่อให้เงาดูชัดเจน */
+    color: #333;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -73,13 +73,19 @@ body {
 .menu-card h3 {
     margin: 0;
     font-size: 1.25rem;
-    color: #005A9C; /* สีหลักของตัวหนังสือ (สามารถปรับเป็นสีอื่นได้) */
-    font-weight: 700; /* ทำให้ตัวหนังสือหนาขึ้นเพื่อเน้นเงา */
+    /* เปลี่ยนจาก color เป็นใช้ gradient */
+    font-weight: 700;
+    line-height: 1.3; /* เพิ่ม line-height เพื่อให้ข้อความสองบรรทัดไม่ติดกันเกินไป */
 
-    /* ===== สไตล์แสงเงาสำหรับตัวหนังสือที่เพิ่มเข้ามาใหม่ ===== */
-    text-shadow:
-        1px 1px 2px rgba(255, 0, 255, 0.3),   /* เงาสีม่วงอ่อน */
-        -1px -1px 2px rgba(255, 100, 0, 0.3),  /* เงาสีส้มอ่อน */
-        0px 0px 8px rgba(0, 150, 255, 0.1);   /* เงาสีฟ้าเรืองๆ */
+
+    /* ===== สไตล์ Gradient สำหรับตัวหนังสือที่เพิ่มเข้ามาใหม่ ===== */
+    background: linear-gradient(to right, #8A2BE2, #FF1493, #FF4500); /* ไล่จากม่วงไปชมพูไปส้ม */
+    -webkit-background-clip: text; /* สำหรับ Chrome, Safari */
+    background-clip: text; /* สำหรับเบราว์เซอร์อื่นๆ */
+    -webkit-text-fill-color: transparent; /* ทำให้ตัวหนังสือโปร่งใส */
+    color: transparent; /* fallback สำหรับเบราว์เซอร์ที่ไม่รองรับ -webkit-text-fill-color */
+
+    /* เพิ่ม text-shadow เบาๆ เพื่อให้มีมิติเล็กน้อย (ถ้าไม่ต้องการ ลบออกได้) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     /* ======================================================= */
 }
