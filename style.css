@@ -28,13 +28,11 @@ body {
     margin-bottom: 3rem;
 }
 
-/* ===== สไตล์สำหรับโลโก้ที่เพิ่มเข้ามาใหม่ ===== */
 .header-logo {
-    max-width: 180px;  /* กำหนดความกว้างสูงสุดของโลโก้ */
-    height: auto;      /* ทำให้ความสูงปรับตามอัตโนมัติ */
-    margin-bottom: 1.5rem; /* เพิ่มระยะห่างใต้โลโก้ */
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 1.5rem;
 }
-/* ========================================= */
 
 .welcome-header h1 {
     font-size: 2.5rem;
@@ -61,7 +59,7 @@ body {
     padding: 2rem;
     text-align: center;
     text-decoration: none;
-    color: #333;
+    color: #333; /* ตั้งสีพื้นฐานเป็นสีเข้มเพื่อให้เงาดูชัดเจน */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -75,5 +73,13 @@ body {
 .menu-card h3 {
     margin: 0;
     font-size: 1.25rem;
-    color: #005A9C;
+    color: #005A9C; /* สีหลักของตัวหนังสือ (สามารถปรับเป็นสีอื่นได้) */
+    font-weight: 700; /* ทำให้ตัวหนังสือหนาขึ้นเพื่อเน้นเงา */
+
+    /* ===== สไตล์แสงเงาสำหรับตัวหนังสือที่เพิ่มเข้ามาใหม่ ===== */
+    text-shadow:
+        1px 1px 2px rgba(255, 0, 255, 0.3),   /* เงาสีม่วงอ่อน */
+        -1px -1px 2px rgba(255, 100, 0, 0.3),  /* เงาสีส้มอ่อน */
+        0px 0px 8px rgba(0, 150, 255, 0.1);   /* เงาสีฟ้าเรืองๆ */
+    /* ======================================================= */
 }
