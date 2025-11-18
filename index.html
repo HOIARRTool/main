@@ -50,16 +50,15 @@
         }
 
         .header-logo {
-            height: 60px;  /* ปรับเล็ก/ใหญ่ได้ */
+            height: 60px;
         }
 
-        /* จูนระดับรูปที่ 3 และ SHS ตามที่คุยกัน */
         .header-logo-3 {
-            margin-top: -3px;   /* ดันขึ้นนิดหน่อย */
+            margin-top: -3px;
         }
 
         .header-logo-shs {
-            margin-top: 4px;    /* ดันลงนิดหน่อย */
+            margin-top: 4px;
         }
 
         .main-title-group {
@@ -88,18 +87,82 @@
             color: #444;
         }
 
-        .menu-grid {
+        /* โครงร่างเมนูหลัก */
+        .menu-wrapper {
             width: 100%;
-            max-width: 960px;
-            margin: 24px auto 32px;
+            max-width: 1080px;
+            margin: 24px auto 40px;
             padding: 0 16px 32px;
+        }
+
+        .menu-section {
+            margin-bottom: 28px;
+            padding: 16px 16px 20px;
+            border-radius: 12px;
+        }
+
+        .menu-section-header {
+            margin-bottom: 12px;
+        }
+
+        .menu-section-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #777;
+            margin: 0 0 4px;
+        }
+
+        .menu-section-title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            padding-left: 10px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .menu-section-desc {
+            margin: 4px 0 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* โทนสีแต่ละ Part */
+        /* Part 1: ฟ้า */
+        .menu-section:nth-of-type(1) {
+            background: #e3f2fd; /* ฟ้าพาสเทลอ่อน */
+        }
+        .menu-section:nth-of-type(1) .menu-section-title {
+            border-left-color: #42a5f5; /* ฟ้าเข้ม */
+        }
+
+        /* Part 2: เขียว */
+        .menu-section:nth-of-type(2) {
+            background: #e8f5e9; /* เขียวพาสเทลอ่อน */
+        }
+        .menu-section:nth-of-type(2) .menu-section-title {
+            border-left-color: #66bb6a; /* เขียวเข้ม */
+        }
+
+        /* Part 3: ส้มพาสเทล */
+        .menu-section:nth-of-type(3) {
+            background: #fff3e0; /* ส้มพาสเทลอ่อน */
+        }
+        .menu-section:nth-of-type(3) .menu-section-title {
+            border-left-color: #ffb74d; /* ส้มเข้ม */
+        }
+
+        .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
+            margin-top: 12px;
         }
 
         .menu-card {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 16px;
@@ -109,12 +172,20 @@
             color: #333;
             box-shadow: 0 2px 6px rgba(0,0,0,0.06);
             transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+            min-height: 90px;
         }
 
         .menu-card h3 {
-            margin: 0;
+            margin: 0 0 4px;
             font-size: 18px;
             text-align: center;
+        }
+
+        .menu-card p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
         }
 
         .menu-card:hover {
@@ -122,6 +193,16 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.12);
             background: #fafafa;
         }
+
+        @media (max-width: 480px) {
+            .main-title-gradient {
+                font-size: 32px;
+            }
+            .subtitle-gradient {
+                font-size: 16px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -149,26 +230,96 @@
             <p class="instruction-text">กรุณาเลือกโปรแกรมที่ต้องการใช้งาน</p>
         </header>
 
-        <main class="menu-grid">
-            <a href="https://toolm1.onrender.com/" class="menu-card" target="_blank" rel="noopener noreferrer">
-                <h3>HOIA-RR Tool</h3>
-            </a>
-            <a href="https://mpx-opd.onrender.com" class="menu-card" target="_blank" rel="noopener noreferrer">
-                <h3>Patient Experience: OPD</h3>
-            </a>
-            <a href="https://mpx-ipd.onrender.com" class="menu-card" target="_blank" rel="noopener noreferrer">
-                <h3>Patient Experience: IPD</h3>
-            </a>
-            <a href="https://sites.google.com/view/mch-hscs67-68/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%A7%E0%B8%A1?authuser=0"
-               class="menu-card" target="_blank" rel="noopener noreferrer">
-                <h3>HSCS</h3>
-            </a>
-            <a href="https://sar-writing.onrender.com/" class="menu-card" target="_blank" rel="noopener noreferrer">
-                <h3>SAR Writing</h3>
-            </a>
-            <a href="https://mthip.onrender.com" class="menu-card">
-                <h3>MCH : THIP</h3>
-            </a>
+        <main class="menu-wrapper">
+            <!-- PART 1: งานคุณภาพและความปลอดภัย -->
+            <section class="menu-section">
+                <div class="menu-section-header">
+                    <p class="menu-section-label">PART 1</p>
+                    <h2 class="menu-section-title">งานคุณภาพและความปลอดภัย</h2>
+                    <p class="menu-section-desc">
+                        เครื่องมือสนับสนุนการประเมินความเสี่ยง การเขียน SAR และ HOIA-RR
+                    </p>
+                </div>
+                <div class="menu-grid">
+                    <a href="https://hoireazy.satiti4u.com/exp/risksimple.php"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>Risk Matrix Assessment</h3>
+                        <p>ประเมินระดับความเสี่ยงด้วยเมทริกซ์อย่างง่าย</p>
+                    </a>
+
+                    <a href="https://sar-writing.onrender.com/"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>SAR Writing</h3>
+                        <p>ช่วยร่าง/จัดโครงสร้างรายงาน SAR</p>
+                    </a>
+
+                    <a href="https://toolb1.onrender.com"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>HOIA-RR Tool</h3>
+                        <p>เครื่องมือวิเคราะห์อุบัติการณ์และจัดทำ Risk Register</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- PART 2: งานทั่วไป -->
+            <section class="menu-section">
+                <div class="menu-section-header">
+                    <p class="menu-section-label">PART 2</p>
+                    <h2 class="menu-section-title">งานทั่วไป</h2>
+                    <p class="menu-section-desc">
+                        เครื่องมืออำนวยความสะดวกในการทำงานเอกสารและสื่อจากไฟล์ภาพ
+                    </p>
+                </div>
+                <div class="menu-grid">
+                    <a href="https://opal.google/?flow=drive:/1PQTReOZDONWfVUhU0cKlRKF_uKY2eMpA&shared&mode=app"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>สร้างปฏิทินจากไฟล์ภาพ</h3>
+                        <p>นำภาพมาแปลงเป็นปฏิทินสวยงามพร้อมใช้งาน</p>
+                    </a>
+
+                    <a href="https://opal.google/?flow=drive:/1Is5JeO-QMFM72F01p1jt79ORKyd0h8mq&shared&mode=app"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>อ่านกราฟจากไฟล์ภาพ</h3>
+                        <p>ดึงข้อมูลจากกราฟในรูปภาพสำหรับการวิเคราะห์ต่อ</p>
+                    </a>
+                </div>
+            </section>
+
+            <!-- PART 3: เฉพาะรพ.มหาวิทยาลัยแม่ฟ้าหลวง -->
+            <section class="menu-section">
+                <div class="menu-section-header">
+                    <p class="menu-section-label">PART 3</p>
+                    <h2 class="menu-section-title">เฉพาะ รพ.มหาวิทยาลัยแม่ฟ้าหลวง</h2>
+                    <p class="menu-section-desc">
+                        ชุดเครื่องมือสำหรับการประเมินประสบการณ์ผู้ป่วยและการพัฒนาคุณภาพใน รพ.มหาวิทยาลัยแม่ฟ้าหลวง
+                    </p>
+                </div>
+                <div class="menu-grid">
+                    <a href="https://mpx-opd.onrender.com"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>Patient Experience: OPD</h3>
+                        <p>แบบประเมินประสบการณ์ผู้ป่วยผู้ป่วยนอก</p>
+                    </a>
+
+                    <a href="https://mpx-ipd.onrender.com"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>Patient Experience: IPD</h3>
+                        <p>แบบประเมินประสบการณ์ผู้ป่วยผู้ป่วยใน</p>
+                    </a>
+
+                    <a href="https://sites.google.com/view/mch-hscs67-68/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%A7%E0%B8%A1?authuser=0"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>HSCS</h3>
+                        <p>ข้อมูล/เครื่องมือ Hospital Safety Culture Survey</p>
+                    </a>
+
+                    <a href="https://mthip.onrender.com"
+                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                        <h3>MCH : THIP</h3>
+                        <p>เครื่องมือสนับสนุนงาน MCH : THIP</p>
+                    </a>
+                </div>
+            </section>
         </main>
     </div>
 </body>
