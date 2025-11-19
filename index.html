@@ -228,11 +228,22 @@
             </div>
 
             <p class="instruction-text">กรุณาเลือกโปรแกรมที่ต้องการใช้งาน</p>
+
+            <!-- Drop-down เลือก Part -->
+            <div class="part-select-wrapper">
+                <label for="part-select">เลือกส่วนงาน:</label>
+                <select id="part-select">
+                    <option value="all">แสดงทุกส่วนงาน</option>
+                    <option value="1">PART 1 – งานคุณภาพและความปลอดภัย</option>
+                    <option value="2">PART 2 – งานทั่วไป</option>
+                    <option value="3">PART 3 – เฉพาะ รพ.มหาวิทยาลัยแม่ฟ้าหลวง</option>
+                </select>
+            </div>
         </header>
 
         <main class="menu-wrapper">
             <!-- PART 1: งานคุณภาพและความปลอดภัย -->
-            <section class="menu-section">
+            <section class="menu-section" data-part="1">
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 1</p>
                     <h2 class="menu-section-title">งานคุณภาพและความปลอดภัย</h2>
@@ -260,7 +271,7 @@
             </section>
 
             <!-- PART 2: งานทั่วไป -->
-            <section class="menu-section">
+            <section class="menu-section" data-part="2">
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 2</p>
                     <h2 class="menu-section-title">งานทั่วไป</h2>
@@ -284,7 +295,7 @@
             </section>
 
             <!-- PART 3: เฉพาะรพ.มหาวิทยาลัยแม่ฟ้าหลวง -->
-            <section class="menu-section">
+            <section class="menu-section" data-part="3">
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 3</p>
                     <h2 class="menu-section-title">เฉพาะ รพ.มหาวิทยาลัยแม่ฟ้าหลวง</h2>
@@ -319,6 +330,7 @@
     </div>
 </body>
 </html>
+
 
 
 
