@@ -322,14 +322,38 @@
                     <a href="https://mthip.onrender.com"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>MCH : THIP</h3>
-
                     </a>
                 </div>
             </section>
         </main>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const select = document.getElementById('part-select');
+            const sections = document.querySelectorAll('.menu-section');
+
+            function updateVisibility() {
+                const value = select.value; // "all", "1", "2", "3"
+                sections.forEach(section => {
+                    const part = section.getAttribute('data-part');
+                    if (value === 'all' || value === part) {
+                        section.style.display = '';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            select.addEventListener('change', updateVisibility);
+
+            // เรียกครั้งแรกให้ค่าเริ่มต้น ("all") ทำงาน
+            updateVisibility();
+        });
+    </script>
 </body>
 </html>
+
 
 
 
