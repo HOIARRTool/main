@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome - Main Menu</title>
 
-    <!-- ฟอนต์ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
@@ -153,12 +152,27 @@
             border-left-color: #ffb74d; /* ส้มเข้ม */
         }
 
+        /* Grid ปกติสำหรับ Part 1 และ 2 */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 16px;
             margin-top: 12px;
         }
+
+        /* ======================================================== */
+        /* เพิ่ม CSS ส่วนนี้เพื่อให้ PART 3 เรียงแถวละ 2 ใบ */
+        .menu-grid-part3 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        /* บนมือถือ (จอเล็กกว่า 640px) ให้กลับมาเป็น 1 คอลัมน์เหมือนเดิม */
+        @media (max-width: 640px) {
+            .menu-grid-part3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* ======================================================== */
 
         .menu-card {
             display: flex;
@@ -209,7 +223,6 @@
     <div class="welcome-container">
         <header class="welcome-header">
 
-            <!-- โลโก้ 4 อันตรงกลางด้านบน -->
             <div class="logo-strip">
                 <img src="https://github.com/HOIARRTool/appqtbi/blob/main/messageImage_1763018987241.jpg?raw=true"
                      alt="Ministry of Public Health" class="header-logo">
@@ -221,7 +234,6 @@
                      alt="SHS Logo" class="header-logo header-logo-shs">
             </div>
 
-            <!-- ชื่อโปรแกรม -->
             <div class="main-title-group">
                 <h1 class="main-title-gradient">Q-TBI</h1>
                 <p class="subtitle-gradient">(Quality to be Improved)</p>
@@ -229,7 +241,6 @@
 
             <p class="instruction-text">กรุณาเลือกโปรแกรมที่ต้องการใช้งาน</p>
 
-            <!-- Drop-down เลือก Part -->
             <div class="part-select-wrapper">
                 <label for="part-select">เลือกกลุ่มเครื่องมือ:</label>
                 <select id="part-select">
@@ -242,7 +253,6 @@
         </header>
 
         <main class="menu-wrapper">
-            <!-- PART 1: งานคุณภาพและความปลอดภัย -->
             <section class="menu-section" data-part="1">
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 1</p>
@@ -270,7 +280,6 @@
                 </div>
             </section>
 
-            <!-- PART 2: งานทั่วไป -->
             <section class="menu-section" data-part="2">
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 2</p>
@@ -294,7 +303,6 @@
                 </div>
             </section>
 
-            <!-- PART 3: เฉพาะรพ.ศูนย์การแพทย์มหาวิทยาลัยแม่ฟ้าหลวง -->
             <section class="menu-section" data-part="3">
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 3</p>
@@ -303,39 +311,33 @@
                         ชุดเครื่องมือสำหรับ รพ.ศูนย์การแพทย์มหาวิทยาลัยแม่ฟ้าหลวง
                     </p>
                 </div>
-            
+                
                 <div class="menu-grid menu-grid-part3">
-                    <!-- การ์ด 1: MCH : HOIR Online -->
                     <a href="https://rm.mch.mfu.ac.th/hoir/"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>MCH : HOIR Online</h3>
                     </a>
-            
-                    <!-- การ์ด 2: MCH : HOIA-RR -->
+                
                     <a href="https://toolm1.onrender.com"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>MCH : HOIA-RR</h3>
                     </a>
-            
-                    <!-- การ์ด 3: Patient Experience : OPD -->
+                
                     <a href="https://mpx-opd.onrender.com"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>Patient Experience : OPD</h3>
                     </a>
-            
-                    <!-- การ์ด 4: Patient Experience : IPD -->
+                
                     <a href="https://mpx-ipd.onrender.com"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>Patient Experience : IPD</h3>
                     </a>
-            
-                    <!-- การ์ด 5: MCH : HSCS -->
+                
                     <a href="https://sites.google.com/view/mch-hscs67-68/%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%A7%E0%B8%A1?authuser=0"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>MCH : HSCS</h3>
                     </a>
-            
-                    <!-- การ์ด 6: MCH : THIP -->
+                
                     <a href="https://mthip.onrender.com"
                        class="menu-card" target="_blank" rel="noopener noreferrer">
                         <h3>MCH : THIP</h3>
@@ -372,14 +374,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
