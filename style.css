@@ -111,7 +111,6 @@ body {
 }
 /* ให้ PART 3 เรียงการ์ดเป็นแถวละ 2 ใบ */
 .menu-grid-part3 {
-    display: grid; /* กันเหนียว */
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -121,6 +120,5 @@ body {
         grid-template-columns: 1fr;
     }
 }
-
 
 
