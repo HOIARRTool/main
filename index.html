@@ -136,15 +136,7 @@
             border-left-color: #42a5f5; /* ฟ้าเข้ม */
         }
 
-        /* Part 2: เขียว */
-        .menu-section:nth-of-type(2) {
-            background: #e8f5e9; /* เขียวพาสเทลอ่อน */
-        }
-        .menu-section:nth-of-type(2) .menu-section-title {
-            border-left-color: #66bb6a; /* เขียวเข้ม */
-        }
-
-        /* Part 3: ส้มพาสเทล */
+        /* Part 2: ส้มพาสเทล */
         .menu-section:nth-of-type(3) {
             background: #fff3e0; /* ส้มพาสเทลอ่อน */
         }
@@ -161,7 +153,7 @@
         }
 
         /* ======================================================== */
-        /* เพิ่ม CSS ส่วนนี้เพื่อให้ PART 3 เรียงแถวละ 2 ใบ */
+        /* เพิ่ม CSS ส่วนนี้เพื่อให้ PART 2 เรียงแถวละ 2 ใบ */
         .menu-grid-part3 {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -274,74 +266,57 @@
                 <select id="part-select">
                     <option value="all">แสดงทุกกลุ่ม</option>
                     <option value="1">PART 1 – งานคุณภาพและความปลอดภัย</option>
-                    <option value="2">PART 2 – งานทั่วไป</option>
-                    <option value="3">PART 3 – เฉพาะ รพ.ศูนย์การแพทย์มหาวิทยาลัยแม่ฟ้าหลวง</option>
+                    <option value="2">PART 2 – เฉพาะ รพ.ศูนย์การแพทย์มหาวิทยาลัยแม่ฟ้าหลวง</option>
                 </select>
             </div>
         </header>
 
-        <main class="menu-wrapper">
+        <main class="menu-wrapper">   
+    
+            <!-- PART 1 : Quality and Patient Safety -->
             <section class="menu-section" data-part="1">
+            
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 1</p>
-                    <h2 class="menu-section-title">งานคุณภาพและความปลอดภัย</h2>
+            
+                    <h2 class="menu-section-title">
+                        งานคุณภาพและความปลอดภัย
+                    </h2>
+            
                     <p class="menu-section-desc">
-                        เครื่องมือสนับสนุนการประเมินความเสี่ยง การเขียน SAR และ HOIA-RR
+                        เครื่องมือสนับสนุนการประเมินความเสี่ยงและการวิเคราะห์อุบัติการณ์
                     </p>
                 </div>
+            
                 <div class="menu-grid menu-grid-part3">
+            
+                    <!-- 1. Risk Matrix Assessment -->
                     <a href="https://hoireazy.satiti4u.com/exp/risksimple.php"
-                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                       class="menu-card"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         <h3>Risk Matrix Assessment</h3>
                         <p>ประเมินระดับความเสี่ยงด้วยเมทริกซ์อย่างง่าย</p>
                     </a>
+            
+                    <!-- 2. HOIA-RR Tool -->
                     <a href="https://toolb1.onrender.com"
-                       class="menu-card" target="_blank" rel="noopener noreferrer">
+                       class="menu-card"
+                       target="_blank"
+                       rel="noopener noreferrer">
                         <h3>HOIA-RR Tool</h3>
                         <p>เครื่องมือวิเคราะห์อุบัติการณ์และจัดทำ Risk Register</p>
                     </a>
-                    <a href="https://sar-writing.onrender.com/"
-                       class="menu-card" target="_blank" rel="noopener noreferrer">
-                        <h3>SAR Writing</h3>
-                        <p>ช่วยร่าง/จัดโครงสร้างรายงาน SAR2022</p>
-                    </a>
-                    <a href="https://rca-tool.onrender.com/"
-                       class="menu-card" target="_blank" rel="noopener noreferrer">
-                        <h3>RCA ToolKit</h3>
-                        <p>For International Hospitals</p>
-                    </a>
-                    
+            
                 </div>
             </section>
-
-            <section class="menu-section" data-part="2">
-                <div class="menu-section-header">
-                    <p class="menu-section-label">PART 2</p>
-                    <h2 class="menu-section-title">งานทั่วไป</h2>
-                    <p class="menu-section-desc">
-                        เครื่องมืออำนวยความสะดวกในการทำงานเอกสารและสื่อจากไฟล์ภาพ
-                    </p>
-                </div>
-                <div class="menu-grid">
-                    <a href="https://opal.google/?flow=drive:/1PQTReOZDONWfVUhU0cKlRKF_uKY2eMpA&shared&mode=app"
-                       class="menu-card" target="_blank" rel="noopener noreferrer">
-                        <h3>Calendar</h3>
-                        <p>ดึงข้อมูลจากภาพมาแปลงเป็นปฏิทิน</p>
-                    </a>
-
-                    <a href="https://opal.google/?flow=drive:/1Is5JeO-QMFM72F01p1jt79ORKyd0h8mq&shared&mode=app"
-                       class="menu-card" target="_blank" rel="noopener noreferrer">
-                        <h3>Graph Reader</h3>
-                        <p>ดึงข้อมูลจากกราฟในรูปภาพสำหรับการวิเคราะห์ต่อ</p>
-                    </a>
-                </div>
-            </section>
-
-            <!-- PART 3 : MFU Medical Center Hospital -->
+            <!-- END PART 1 -->            
+        
+            <!-- PART 2 : MFU Medical Center Hospital -->
             <section class="menu-section" data-part="3">
             
                 <div class="menu-section-header">
-                    <p class="menu-section-label">PART 3</p>
+                    <p class="menu-section-label">PART 2</p>
             
                     <h2 class="menu-section-title">
                         เฉพาะ รพ.ศูนย์การแพทย์มหาวิทยาลัยแม่ฟ้าหลวง
@@ -404,7 +379,7 @@
             
                 </div>
             </section>
-            <!-- END PART 3 -->
+            <!-- END PART 2 -->
 
         </main>
     </div>
