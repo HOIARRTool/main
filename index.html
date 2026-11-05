@@ -318,7 +318,7 @@
             <!-- END PART 1 -->            
         
             <!-- PART 2 : MFU Medical Center Hospital -->
-            <section class="menu-section" data-part="3">
+            <section class="menu-section" data-part="2">
             
                 <div class="menu-section-header">
                     <p class="menu-section-label">PART 2</p>
@@ -395,7 +395,7 @@
             const sections = document.querySelectorAll('.menu-section');
 
             function updateVisibility() {
-                const value = select.value; // "all", "1", "2", "3"
+                const value = select.value; // "all", "1", "2"
                 sections.forEach(section => {
                     const part = section.getAttribute('data-part');
                     if (value === 'all' || value === part) {
