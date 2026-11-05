@@ -137,10 +137,10 @@
         }
 
         /* Part 2: ส้มพาสเทล */
-        .menu-section:nth-of-type(3) {
+        .menu-section:nth-of-type(2) {
             background: #fff3e0; /* ส้มพาสเทลอ่อน */
         }
-        .menu-section:nth-of-type(3) .menu-section-title {
+        .menu-section:nth-of-type(2) .menu-section-title {
             border-left-color: #ffb74d; /* ส้มเข้ม */
         }
 
@@ -154,13 +154,13 @@
 
         /* ======================================================== */
         /* เพิ่ม CSS ส่วนนี้เพื่อให้ PART 2 เรียงแถวละ 2 ใบ */
-        .menu-grid-part3 {
+        .menu-grid-part2 {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         /* บนมือถือ (จอเล็กกว่า 640px) ให้กลับมาเป็น 1 คอลัมน์เหมือนเดิม */
         @media (max-width: 640px) {
-            .menu-grid-part3 {
+            .menu-grid-part2 {
                 grid-template-columns: 1fr;
             }
         }
