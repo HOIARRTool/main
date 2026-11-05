@@ -217,6 +217,34 @@
             }
         }
 
+        /* Q-TBI Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            bottom: 14px;
+            right: 14px;
+            z-index: 9999;
+        
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        
+            background: rgba(255,255,255,0.95);
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 6px 12px;
+        
+            color: #777;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 12px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        
+        .visitor-counter .counterapi {
+            display: inline-flex;
+            align-items: center;
+            min-height: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -404,6 +432,27 @@
             updateVisibility();
         });
     </script>
+
+    <!-- Visitor Counter -->
+    <div class="visitor-counter">
+        <span>👁 Visitors</span>
+    
+        <div class="counterapi"
+             ns="qtbi.onrender.com"
+             action="view"
+             key="homepage"
+             noIcon="true"
+             noCss="true"
+             noLink="true"
+             noAnim="true">
+        </div>
+    </div>   
+
+    <!-- CounterAPI -->
+    <script src="https://counterapi.com/c.js?ns=qtbi.onrender.com"
+            async>
+    </script>
+    
 </body>
 </html>
 
