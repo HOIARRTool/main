@@ -153,17 +153,22 @@
         }
 
         /* ======================================================== */
-        /* เพิ่ม CSS ส่วนนี้เพื่อให้ PART 2 เรียงแถวละ 2 ใบ */
-        .menu-grid-part2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
 
-        /* บนมือถือ (จอเล็กกว่า 640px) ให้กลับมาเป็น 1 คอลัมน์เหมือนเดิม */
+        /* PART 2: แสดง 2 คอลัมน์ × 3 แถว */
+        .menu-section[data-part="2"] .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+        
+        /* หน้าจอมือถือ: แสดง 1 คอลัมน์ */
         @media (max-width: 640px) {
-            .menu-grid-part2 {
+            .menu-section[data-part="2"] .menu-grid {
                 grid-template-columns: 1fr;
             }
         }
+
         /* ======================================================== */
 
         .menu-card {
