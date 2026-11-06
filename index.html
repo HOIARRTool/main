@@ -236,11 +236,7 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
         
-        .visitor-counter .counterapi {
-            display: inline-flex;
-            align-items: center;
-            min-height: 0;
-        }
+
 
     </style>
 </head>
@@ -413,24 +409,41 @@
         });
     </script>
 
-    <!-- Visitor Counter -->
+    <!-- Q-TBI Visitor Counter -->
     <div class="visitor-counter">
         <span>👁 Visitors</span>
+        <strong id="visitor-count">...</strong>
+    </div>
     
-        <div class="counterapi"
-             ns="qtbi.onrender.com"
-             action="view"
-             key="homepage"
-             noIcon="true"
-             noCss="true"
-             noLink="true"
-             noAnim="true">
-        </div>
-    </div>   
-
-    <!-- CounterAPI -->
-    <script src="https://counterapi.com/c.js?ns=qtbi.onrender.com"
-            async>
+    <script>
+        const COUNTER_URL = "PASTE_YOUR_APPS_SCRIPT_URL_HERE";
+    
+        window.qtbiCounterReceive = function(data) {
+            const el = document.getElementById("visitor-count");
+            const count = Number(data.count);
+    
+            if (Number.isFinite(count)) {
+                el.textContent = count.toLocaleString("en-US");
+                sessionStorage.setItem("qtbi-counted", "1");
+            } else {
+                el.textContent = "—";
+            }
+        };
+    
+        const alreadyCounted =
+            sessionStorage.getItem("qtbi-counted") === "1";
+    
+        const script = document.createElement("script");
+    
+        script.src = COUNTER_URL +
+            "?action=" + (alreadyCounted ? "read" : "hit") +
+            "&t=" + Date.now();
+    
+        script.onerror = function() {
+            document.getElementById("visitor-count").textContent = "—";
+        };
+    
+        document.body.appendChild(script);
     </script>
     
 </body>
